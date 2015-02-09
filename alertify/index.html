@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Alertify</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="js/alertify.min.js"></script>
+	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/alertify.core.css">
+		<link rel="stylesheet" href="css/alertify.default.css">
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#simple').click(function(){
+					alertify.alert('simple');
+					//alertify.success('hol')
+				});
+				$('#confirmacion').click(function(){
+					alertify.confirm('Como Estas',function(result){
+						if(result){
+							alertify.alert('Bien')
+						}
+					});
+				});
+				$('#prompt').click(function(){
+					alertify.prompt('Escribe tu nombre',function(e,str){
+						if(e){
+							alertify.alert('hola '+str)
+						}
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="jumbotron">
+			<a class="btn btn-info" id="simple">Simple Alerta</a>
+			<a class="btn btn-info" id="confirmacion">Confirmacion</a>
+			<a class="btn btn-info" id="prompt">Prompt</a>
+		</div>
+	</body>
+</html>
